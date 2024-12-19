@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/cart")
 public class CartController {
@@ -17,8 +19,29 @@ public class CartController {
     public Cart addtocart(@RequestAttribute("id") Long id, @RequestParam Long BookId,@RequestParam Long quantity) {
         return cartService.addtocart(id,BookId,quantity);
     }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> RemoveFromCart(@PathVariable Long id){
+        return cartService.RemoveFromCartbyId(id);
+    }
 
-    
+    @DeleteMapping("/remove")
+    public ResponseEntity<String> RemoveByUserIDToken(@RequestAttribute("id") Long id){
+        return cartService.RemoveByUserIDToken(id);
+    }
+    @PutMapping("/")
+    @GetMapping("/userCart")
+    private List<Cart> getallcartsforuser(@RequestAttribute("id") Long id){
+        return cartService.getAllCartsForUser(id);
+    }
+    @GetMapping("/all")
+    private List<Cart> getallcartitems(){
+        return cartService.getallcartitems();
+    }
+
+
+
+
+
 
 
 

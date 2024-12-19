@@ -5,6 +5,7 @@ import com.book.exception.CustomException;
 import com.book.model.Book;
 import com.book.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -39,6 +40,7 @@ public class BookServiceImpl implements BookService {
     @Override
     public Book getBookById(Long id) {
         return  bookRepository.findById(id).orElseThrow(()->new CustomException("Book Not Found By ID"));
+
     }
 
     @Override
@@ -47,5 +49,6 @@ public class BookServiceImpl implements BookService {
         bookRepository.deleteById(id);
         return "User Delete successfully !";
     }
+
 
 }
