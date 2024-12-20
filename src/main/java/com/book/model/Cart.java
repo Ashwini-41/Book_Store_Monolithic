@@ -19,7 +19,7 @@ public class Cart {
     @ManyToOne
     @JoinColumn(name = "book_id")
     private Book book;
-    private Long  Quantity;
+    private int   Quantity;
     private double price;
 
 }

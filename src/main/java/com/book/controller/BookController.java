@@ -54,6 +54,7 @@ public class BookController {
             return ResponseEntity.status(403).body("Access Denied");
         }
     }
+
     @DeleteMapping("/{id}")
     private ResponseEntity<?> deleteBookById(@RequestAttribute("role") String role,@PathVariable Long id){
         if("ADMIN".equalsIgnoreCase(role)){

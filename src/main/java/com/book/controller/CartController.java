@@ -16,9 +16,10 @@ public class CartController {
     private CartService cartService;
 
     @PostMapping("/add")
-    public Cart addtocart(@RequestAttribute("id") Long id, @RequestParam Long BookId,@RequestParam Long quantity) {
+    public Cart addtocart(@RequestAttribute("id") Long id, @RequestParam Long BookId,@RequestParam int quantity) {
         return cartService.addtocart(id,BookId,quantity);
     }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<String> RemoveFromCart(@PathVariable Long id){
         return cartService.RemoveFromCartbyId(id);
@@ -28,11 +29,11 @@ public class CartController {
     public ResponseEntity<String> RemoveByUserIDToken(@RequestAttribute("id") Long id){
         return cartService.RemoveByUserIDToken(id);
     }
-    @PutMapping("/")
     @GetMapping("/userCart")
     private List<Cart> getallcartsforuser(@RequestAttribute("id") Long id){
         return cartService.getAllCartsForUser(id);
     }
+
     @GetMapping("/all")
     private List<Cart> getallcartitems(){
         return cartService.getallcartitems();

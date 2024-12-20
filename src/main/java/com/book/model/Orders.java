@@ -14,6 +14,7 @@ import java.time.LocalDateTime;
 @Data
 public class Orders {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private LocalDateTime orderDateTime;
     private double price;

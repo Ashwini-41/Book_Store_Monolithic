@@ -80,19 +80,4 @@ public class UserController {
         
     }
 
-
-//    @GetMapping("/{id}")
-//    private ResponseEntity<?> getUserById(@PathVariable Long id){
-//        return new ResponseEntity<>(userService.getUserById(id),HttpStatus.OK);
-//    }
-//
-//    @GetMapping("/all")
-//    private ResponseEntity<?> getAllUser(){
-//        return new ResponseEntity<>(userService.getAllUser(),HttpStatus.OK);
-//    }
-//
-//    @PutMapping("/{id}")
-//    private ResponseEntity<?> updateUserByID(@PathVariable Long id,@RequestBody UserDTO userDTO){
-//        return  new ResponseEntity<>(userService.updateUserByID(id,userDTO ),HttpStatus.OK);
-//    }
 }

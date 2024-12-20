@@ -9,7 +9,7 @@ public interface CartService {
 
     ResponseEntity<String> RemoveFromCartbyId(Long id) ;
 
-    Cart addtocart(Long id, Long bookId, Long quantity);
+    Cart addtocart(Long id, Long bookId, int  quantity);
 
     ResponseEntity<String> RemoveByUserIDToken(Long id);
 

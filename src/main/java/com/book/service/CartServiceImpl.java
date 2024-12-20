@@ -34,7 +34,7 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
-    public Cart addtocart(Long id, Long bookId, Long quantity) {
+    public Cart addtocart(Long id, Long bookId, int  quantity) {
         Cart c = new Cart();
         Book book = bookRepository.findById(bookId).orElseThrow(() -> new CustomException("Book not found By id !"));
         User user= userRepository.findById(id).orElseThrow(() -> new CustomException("User not found By id !"));
