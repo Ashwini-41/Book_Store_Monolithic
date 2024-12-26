@@ -27,7 +27,7 @@ public class RegisterController {
     }
     @GetMapping("/push")
     public String push(){
-        return "pushpak";
+        return "ok123";
     }
     @PostMapping("/register")
     public ResponseEntity<?> addUser(@Validated @RequestBody UserDTO userDTO){
