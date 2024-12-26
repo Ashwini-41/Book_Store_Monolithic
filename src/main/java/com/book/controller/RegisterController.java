@@ -25,6 +25,10 @@ public class RegisterController {
     public String test(){
         return "test ok";
     }
+    @GetMapping("/test3")
+    public String test(){
+        return "hii";
+    }
 
     @PostMapping("/register")
     public ResponseEntity<?> addUser(@Validated @RequestBody UserDTO userDTO){
