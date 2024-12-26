@@ -21,6 +21,10 @@ public class UserController {
     private UserService userService;
     @Autowired
     private TokenUtility tokenUtility;
+    @GetMapping("/test")
+    public String test(){
+        return "hii";
+    }
 
     @GetMapping("/details")
     public ResponseEntity<?> getUser(@RequestAttribute("role") String role,@RequestAttribute("id") Long id) {
