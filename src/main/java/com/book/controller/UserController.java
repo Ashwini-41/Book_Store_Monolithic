@@ -21,7 +21,7 @@ public class UserController {
     private UserService userService;
     @Autowired
     private TokenUtility tokenUtility;
-    @GetMapping("/test")
+    @GetMapping("/test1")
     public String test(){
         return "hii";
     }
